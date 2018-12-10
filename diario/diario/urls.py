@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from diario_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.inicio),
+    path('diarios-por-pais/', views.diarios_por_pais),
+    path('crear-diario/', views.crear_diario),
 ]

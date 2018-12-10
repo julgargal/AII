@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Diarios {% endblock %}
+
+{% block encabezado %}
+	<h1>Todas los diarios </h1>
+{% endblock %}
+
+{% block contenido %}
+	{% if lista_diarios %}
+		{% for diario in lista_diarios %}
+			<strong>{{diario.nombre}}</strong>
+            <br>
+		{% endfor %}
+	{% else %}
+	 	<p><strong>No hay ningun diario en el sistema</strong></p>
+	{% endif %}
+{% endblock %}
