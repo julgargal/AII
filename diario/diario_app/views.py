@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from diario_app.models import Diario
 from .forms import DiarioForm
+from django.template import RequestContext
+from django.shortcuts  import render_to_response
 from django.http import HttpResponseRedirect
 # Create your views here.
 
@@ -14,9 +16,12 @@ def diarios_por_pais(request):
 
 def crear_diario(request):
     if request.method == 'POST':
-        form=DiarioForm(request.POST)
+        form = DiarioForm(request.POST)
         if form.is_valid():
-            form.save()
+            new_diario = form.save()
+
+            #return HttpResponseRedirect(reverse('upersonas:plist'))
     else:
-        form=DiarioForm()
-    return render(request,'diario_form.html',{'form':form})
+        form = DiarioForm()
+
+    return render(request, '/templates/diario_form.html', {'form': form})

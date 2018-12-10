@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio),
     path('diarios-por-pais/', views.diarios_por_pais),
-    path('crear-diario/', views.crear_diario),
+    path('crear-diario/', views.crear_diario,name='add_diario'),
 ]
