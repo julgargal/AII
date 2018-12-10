@@ -2,7 +2,7 @@ from django.db import models
 # Create your models here.
 
 class Diario(models.Model):
-    nombre=timestamp = models.CharField(max_length=100)
+    nombre=models.CharField(max_length=100)
     pais=models.CharField(max_length=30)
     idioma=models.CharField(max_length=30)
     def __str__(self):
@@ -10,10 +10,10 @@ class Diario(models.Model):
 
 class Usuario(models.Model):
     nombre_usuario= models.CharField(max_length=20, primary_key=True)
-    passwd=timestamp = models.CharField(max_length=30)
-    email=timestamp = models.CharField(max_length=50)
-    nombre=timestamp = models.CharField(max_length=100)
-    apellidos=timestamp = models.CharField(max_length=100)
+    passwd=models.CharField(max_length=30)
+    email=models.CharField(max_length=50)
+    nombre=models.CharField(max_length=100)
+    apellidos=models.CharField(max_length=100)
     def __str__(self):
         return self.nombre_usuario
 
