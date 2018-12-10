@@ -8,7 +8,7 @@ class Diario(models.Model):
     def __str__(self):
         return self.nombre
 
-class Usuario(models.Model):
+class Artista(models.Model):
     nombre_usuario= models.CharField(max_length=20, primary_key=True)
     passwd=models.CharField(max_length=30)
     email=models.CharField(max_length=50)
